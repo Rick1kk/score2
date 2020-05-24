@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">score</string>
+    <string name="textviewA">A队</string>
+    <string name="textviewB">B队</string>
+    <string name="buttona1">+1</string>
+    <string name="buttona2">+2</string>
+    <string name="buttona3">+3</string>
+    <string name="buttonb1">+1</string>
+    <string name="buttonb2">+2</string>
+    <string name="buttonb3">+3</string>
+    <string name="textviewSa" />
+    <string name="textviewSb" />
+    <string name="content">new</string>
+    <string name="contentback">back</string>
+</resources>

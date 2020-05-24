@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+            <variable
+                name="data"
+                type="com.example.score.MyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/textviewA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textviewA"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.264"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.211" />
+
+        <TextView
+            android:id="@+id/textViewB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/textviewB"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.704"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.21" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="13dp"
+            android:text="@string/buttonb3"
+            android:onClick="@{()->data.bTeamAdd(3)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/buttona3"
+            app:layout_constraintTop_toTopOf="@+id/buttona3" />
+
+        <Button
+            android:id="@+id/buttona3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="9dp"
+            android:text="@string/buttona3"
+            android:onClick="@{()->data.aTeamAdd(3)}"
+            app:layout_constraintEnd_toStartOf="@+id/button6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="44dp"
+            android:text="@string/buttonb2"
+            android:onClick="@{()->data.bTeamAdd(2)}"
+            app:layout_constraintBottom_toTopOf="@+id/button6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="6dp"
+            android:text="@string/buttona2"
+            android:onClick="@{()->data.aTeamAdd(2)}"
+            app:layout_constraintEnd_toStartOf="@+id/button5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:text="@string/buttonb1"
+            android:onClick="@{()->data.bTeamAdd(1)}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="152dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/buttona1"
+            android:onClick="@{()->data.aTeamAdd(1)}"
+            app:layout_constraintEnd_toStartOf="@+id/button4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textviewA" />
+
+        <TextView
+            android:id="@+id/textviewSa"
+            android:layout_width="126dp"
+            android:layout_height="94dp"
+            android:layout_marginTop="216dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="289dp"
+            android:text="@{String.valueOf(data.getaTeamScore())}"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="80sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView2"
+            app:layout_constraintEnd_toStartOf="@+id/textView3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="55" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="122dp"
+            android:layout_height="99dp"
+            android:layout_marginTop="215dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="282dp"
+            android:text="@{String.valueOf(data.getbTeamScore())}"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="80sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textviewSa"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="66" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="97dp"
+            android:layout_marginBottom="83dp"
+            android:contentDescription="@string/content"
+            android:onClick="@{()->data.reset()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
+            app:srcCompat="@drawable/ic_autorenew_black_24dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="98dp"
+            android:layout_marginEnd="111dp"
+            android:layout_marginBottom="88dp"
+            android:contentDescription="@string/contentback"
+            android:onClick="@{()->data.undo()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textviewSa"
+            app:srcCompat="@drawable/ic_arrow_back_black_24dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
